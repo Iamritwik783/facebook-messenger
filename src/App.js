@@ -23,15 +23,9 @@ function App() {
 
       <FormControl>
         <InputLabel>Enter a message....</InputLabel>
-        <Input value={input} onChange={event => setInput(event.target.value)}/>
-        <Button disabled = {!input} variant="contained" color = "primary" type="submit" onClick={sendMessage}>Send Message</Button>
+        <Input value={input} onChange={event => setInput(event.target.value)} />
+        <Button disabled={!input} variant="contained" color="primary" type="submit" onClick={sendMessage}>Send Message</Button>
       </FormControl>
-
-      <form >
-    
-      
-      </form>
-
 
       {/* messages */}
       {
