@@ -1,17 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
+
 import './App.css';
 
 function App() {
+  const [input, setInput] = useState('')
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          My awesome react app @facebook.
-        </p>
+      <h1>Hello</h1>
 
-      </header>
+    <input/>
+    <button>Send Messages</button>
+
+{/* input button */}
+{/* button */}
+{/* messages */}
+
     </div>
   );
 }
