@@ -10,6 +10,7 @@ function App() {
 
   // sending message function:
   const sendMessage = (event) => {
+    event.preventDefault(); // to stop "form" from refreshing
     setMessages([...messages, input]);
     setInput('');
   }
@@ -18,8 +19,11 @@ function App() {
     <div className="App">
       <h1>Hello</h1>
 
+      <form >
       <input value={input} onChange={event => setInput(event.target.value)} />
-      <button onClick={sendMessage}>Send Messages</button>
+      <button type="submit" onClick={sendMessage}>Send Messages</button>
+      </form>
+
 
       {/* messages */}
       {
