@@ -5,20 +5,16 @@ import './App.css';
 
 function App() {
   const [input, setInput] = useState('');
-  const [messages, setMessages] = useState([{username:'sonu', text: 'hey'}, {username:'khata', text: 'hello'}, {username:'ritwik', text: 'whatsup'}]);
+  const [messages, setMessages] = useState([{ username: 'sonu', text: 'hey' }, { username: 'khata', text: 'hello' }, { username: 'ritwik', text: 'whatsup' }]);
   const [username, setUsername] = useState('');
 
   // useState = variable in React
   // useEffect = run code on a condition in React
 
   useEffect(() => {
-    // run code here....
-    // if its blank inside [], this will run only once...
-
+    // run code here.... if its blank inside [], this will run only once...
     // const username = prompt("Please enter your name:")
     setUsername(prompt("Please enter your name:"))
-
-
   }, []) // condition
 
   //console.log(input);
@@ -27,7 +23,7 @@ function App() {
   // sending message function:
   const sendMessage = (event) => {
     event.preventDefault(); // to stop "form" from refreshing
-    setMessages([...messages, {username: username, text: input}]);
+    setMessages([...messages, { username: username, text: input }]);
     setInput('');
   }
 
@@ -35,19 +31,18 @@ function App() {
     <div className="App">
       <h1>Hello {username}</h1>
 
-
       <FormControl>
-        <InputLabel>Enter a message....</InputLabel>
+        <InputLabel>Enter a message.....</InputLabel>
         <Input value={input} onChange={event => setInput(event.target.value)} />
-        <Button disabled={!input} variant="contained" color="primary" type="reset" onClick={sendMessage}>Send Message</Button>
+        <Button type="submit" variant="contained" color="primary" disabled={!input} onClick={sendMessage}> Send Message</Button>
       </FormControl>
 
-      {/* messages */}
+      {/* message */}
       {
         messages.map(message => (
           <Message
-          username = {message.username} 
-          text = {message.text}/>
+            username={message.username}
+            text={message.text} />
         ))
       }
 
