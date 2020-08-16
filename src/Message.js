@@ -6,8 +6,9 @@ import './Message.css'
 function Message(props) {
     const isUser = props.currentUser === props.username
     return (
-        <div>
-            <Card className={`message ${isUser && 'message_user'}`}>
+        // className={`message ${isUser && 'message_user'}`}
+        <div className={`message ${isUser && 'message_user'}`}>
+            <Card className= {isUser? "message_usercard": "message_guestcard"} >
                 <CardContent>
                     <Typography
                         color="white"

@@ -6,5 +6,10 @@
 .message_user{
     margin-left: auto;
     text-align: left !important;
-    
+}
+.message_usercard{
+    background-color: #0b81ff !important;
+}
+.message_guestcard{
+    background-color: #e9e9eb !important;
 }
