@@ -41,6 +41,7 @@ function App() {
       {
         messages.map(message => (
           <Message
+            currentUser = {username}
             username={message.username}
             text={message.text} />
         ))
