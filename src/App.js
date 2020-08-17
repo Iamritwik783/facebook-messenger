@@ -6,7 +6,7 @@ import db from './firebase';
 import firebase from './firebase';
 import 'firebase/firestore';
 
-function App() {
+function App() { 
   const [input, setInput] = useState('');
   //console.log(input);
   const [messages, setMessages] = useState([{}]);
@@ -14,11 +14,13 @@ function App() {
   const [username, setUsername] = useState('');
 
   // useState = variable in React
-  // useEffect = run code on a condition in React
+  // useEffect = run code on a condition in React 
+
 
   useEffect(() => {
-    // run once when component loads
-    db.collection('messages').onSnapshot(snapshot => {
+    // runs once when component loads
+    db.collection('messages').orderBy('timestamp','desc')
+    .onSnapshot(snapshot => {
       setMessages(snapshot.docs.map(doc => doc.data()))
     })
   }, [])
@@ -28,9 +30,6 @@ function App() {
     // const username = prompt("Please enter your name:")
     setUsername(prompt("Please enter your name:"));
   }, []) // condition
-
-
-
 
 
   // sending message function:
@@ -56,6 +55,7 @@ function App() {
     // setMessages([...messages, { username: username, message: input }]);
     setInput('');
   }
+  
 
   return (
     <div className="App">

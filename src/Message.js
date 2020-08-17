@@ -18,9 +18,8 @@ function Message(props) {
                     {props.username}: {props.text}
                     </Typography>
                 </CardContent>
-            </Card>
-            
-        </div>
+            </Card>           
+        </div> 
     )
 }
 
