@@ -68,7 +68,7 @@ function App() {
       </FormControl>
 
       {/* message */}
-      {
+      { 
         messages.map(message => (
           <Message
             currentUser={username}
