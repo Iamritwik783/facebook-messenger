@@ -3,8 +3,6 @@ import { Button, FormControl, InputLabel, Input } from '@material-ui/core';
 import Message from './Message';
 import './App.css';
 import db from './firebase';
-import firebase from './firebase';
-import 'firebase/firestore';
 
 function App() { 
   const [input, setInput] = useState('');
