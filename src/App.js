@@ -59,7 +59,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Hello {username}</h1>
+      <h1>Hello: {username}</h1>
 
       <FormControl>
         <InputLabel>Enter a message.....</InputLabel>
